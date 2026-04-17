@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 519.682 s <<< FAILURE! - in TestSuite
+com.hxpms.runners.TestNGRunner.runScenario["Create a new walk-in booking for an existing guest with cash payment", "Create Booking"](1)  Time elapsed: 519.283 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for at least one condition to be valid: url to contain "booking/details". Current url: "https://demo.hotelxplore.com/frontdesk/book-room?book-type=Walk%20In" || url to contain "booking/". Current url: "https://demo.hotelxplore.com/frontdesk/book-room?book-type=Walk%20In" || visibility of element located by By.cssSelector: #postPayment (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49689}, goog:processID: 3758, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49689/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 026f50ed22b7d3470cc2986717242a34
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.hxpms.stepdefinitions.BookingSteps.theBookingShouldBeCreatedSuccessfully(BookingSteps.java:387)
+	at ✽.the booking should be created successfully(file:///Users/pa/Downloads/HX_PMS_Full%20_Phase/HX_PMS/HX_PMS_Framework/src/test/resources/features/Booking.feature:7)
+
