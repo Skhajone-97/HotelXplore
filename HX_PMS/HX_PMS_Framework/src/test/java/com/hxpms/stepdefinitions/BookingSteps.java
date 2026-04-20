@@ -25,14 +25,17 @@ public class BookingSteps {
         dismissAlert();
     }
 
+    // ══════════════════════════════════════════════════════════════════════════
+    // SCENARIO 1 — Walk-In: 1 room, 1 night, Jully Williams, Cash
+    // ══════════════════════════════════════════════════════════════════════════
     @And("I create a new booking with guest details")
     public void iCreateANewBookingWithGuestDetails() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         openWalkInBooking(wait);
-        fillSearchForm(wait);
+        fillSearchForm(wait, "Walk In", "1", 1);
         clickSearchAndWait(wait);
         handleRoomSelection(wait);
-        fillNewGuestDetails(wait);
+        fillGuestDetails(wait, "Jully", "Williams", "jully.williams@example.com", "5551234567", "123 Main Street", "10001", "1", "0");
         clickNextToPayment(wait);
         waitForPaymentSection(wait);
         selectCashPayment(wait);
@@ -41,77 +44,108 @@ public class BookingSteps {
         dismissAlert();
     }
 
-    // ── Step 1 ─────────────────────────────────────────────────────────────────
+    // ══════════════════════════════════════════════════════════════════════════
+    // SCENARIO 2 — Reservation: 5 rooms, 6 nights, Kelvin Disuza, Cash
+    // ══════════════════════════════════════════════════════════════════════════
+    @And("I create a reservation booking for 5 rooms and 6 nights")
+    public void iCreateAReservationBookingFor5RoomsAnd6Nights() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        openReservationBooking(wait);
+        fillSearchForm(wait, "Reservation", "5", 6);
+        clickSearchAndWait(wait);
+        handleRoomSelection(wait);
+        fillGuestDetails(wait, "Kelvin", "Disuza", "kelvin.disuza@example.com", "5559876543", "456 Ocean Avenue", "90210", "5", "0");
+        clickNextToPayment(wait);
+        waitForPaymentSection(wait);
+        selectCashPayment(wait);
+        confirmBooking(wait);
+        completePostPayment(wait);
+        dismissAlert();
+    }
+
+    // ── Open Walk In page ──────────────────────────────────────────────────────
     private void openWalkInBooking(WebDriverWait wait) {
         By walkIn = By.xpath("//a[contains(@class,'btn-theam1') and normalize-space()='Walk In']");
         wait.until(ExpectedConditions.elementToBeClickable(walkIn));
         jsClick(driver.findElement(walkIn));
-        try {
-            wait.until(ExpectedConditions.urlContains("book-room"));
-        } catch (Exception e) {
+        try { wait.until(ExpectedConditions.urlContains("book-room")); }
+        catch (Exception e) {
             driver.get("https://demo.hotelxplore.com/frontdesk/book-room?book-type=Walk%20In");
             wait.until(ExpectedConditions.urlContains("book-room"));
         }
     }
 
-    // ── Step 2 ─────────────────────────────────────────────────────────────────
-    private void fillSearchForm(WebDriverWait wait) throws InterruptedException {
-        LocalDate today    = LocalDate.now();
-        LocalDate tomorrow = today.plusDays(1);
+    // ── Open Reservation page ──────────────────────────────────────────────────
+    private void openReservationBooking(WebDriverWait wait) {
+        By resBtn = By.xpath("//a[contains(@class,'btn-theam1') and normalize-space()='Reservation']");
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(resBtn));
+            jsClick(driver.findElement(resBtn));
+        } catch (Exception e) {
+            driver.get("https://demo.hotelxplore.com/frontdesk/book-room?book-type=Reservation");
+        }
+        try { wait.until(ExpectedConditions.urlContains("book-room")); }
+        catch (Exception e) {
+            driver.get("https://demo.hotelxplore.com/frontdesk/book-room?book-type=Reservation");
+            wait.until(ExpectedConditions.urlContains("book-room"));
+        }
+        System.out.println("[BookingSteps] On reservation page");
+    }
+
+    // ── Fill search form ───────────────────────────────────────────────────────
+    // Key fix: page pre-fills dates on load — only set if empty, never clear
+    private void fillSearchForm(WebDriverWait wait, String bookingType, String rooms, int nights)
+            throws InterruptedException {
+        LocalDate checkIn  = LocalDate.now();
+        LocalDate checkOut = checkIn.plusDays(nights);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("checkin_date")));
+        Thread.sleep(500);
 
-        js.executeScript(
-            "var e=document.getElementById('checkin_date');" +
-            "e.value=arguments[0];" +
-            "e.dispatchEvent(new Event('input',{bubbles:true}));" +
-            "e.dispatchEvent(new Event('change',{bubbles:true}));",
-            today.format(DATE_FMT));
-        Thread.sleep(400);
+        // Only set date if the field is empty — page pre-fills today/tomorrow on load
+        setDateIfEmpty("checkin_date",  checkIn.format(DATE_FMT));
+        setDateIfEmpty("checkout_date", checkOut.format(DATE_FMT));
+        Thread.sleep(500);
 
-        js.executeScript(
-            "var e=document.getElementById('checkout_date');" +
-            "e.value=arguments[0];" +
-            "e.dispatchEvent(new Event('input',{bubbles:true}));" +
-            "e.dispatchEvent(new Event('change',{bubbles:true}));",
-            tomorrow.format(DATE_FMT));
-        Thread.sleep(600);
-
+        // Force stay-nights value
         js.executeScript(
             "var n=document.getElementById('stay-nights');" +
-            "n.value='1';" +
+            "n.value='" + nights + "';" +
             "n.dispatchEvent(new Event('input',{bubbles:true}));" +
             "n.dispatchEvent(new Event('change',{bubbles:true}));");
 
-        selectByValue(By.id("booking_type"), "Walk In");
-        selectByValue(By.id("rooms"), "1");
+        selectByValue(By.id("booking_type"), bookingType);
+        selectByValue(By.id("rooms"), rooms);
         try { new Select(driver.findElement(By.id("applied-offer-code-dropdown"))).selectByIndex(0); }
         catch (Exception ignored) {}
+
+        System.out.println("[BookingSteps] Search form filled: type=" + bookingType + " rooms=" + rooms + " nights=" + nights);
     }
 
-    // ── Step 3: click Search, wait for room buttons OR guest form ──────────────
+    // ── Click Search and wait for results ─────────────────────────────────────
     private void clickSearchAndWait(WebDriverWait wait) throws InterruptedException {
         By searchBtn = By.cssSelector("button.btn.btn-warning.search");
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn));
         driver.findElement(searchBtn).click();
         System.out.println("[BookingSteps] Search clicked");
 
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d ->
-            !d.findElements(By.xpath("//button[contains(@class,'room_types')]")).isEmpty()
-            || !d.findElements(By.xpath("//button[contains(@class,'room-btn')]")).isEmpty()
-            || (!d.findElements(By.id("guest_type")).isEmpty()
-                && d.findElement(By.id("guest_type")).isDisplayed())
-        );
+        // Wait up to 30s for room_types buttons OR room-btn OR guest_type
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
+            if (!d.findElements(By.xpath("//button[contains(@class,'room_types')]")).isEmpty()) return true;
+            if (!d.findElements(By.xpath("//button[contains(@class,'room-btn')]")).isEmpty()) return true;
+            List<WebElement> gt = d.findElements(By.id("guest_type"));
+            return !gt.isEmpty() && gt.get(0).isDisplayed();
+        });
         Thread.sleep(500);
         System.out.println("[BookingSteps] Search results ready");
     }
 
-    // ── Step 4: handle room selection + close modal ────────────────────────────
+    // ── Handle room selection + close modal ────────────────────────────────────
     private void handleRoomSelection(WebDriverWait wait) throws InterruptedException {
-        // If guest form already visible, skip room selection entirely
-        List<WebElement> guestTypeEls = driver.findElements(By.id("guest_type"));
-        if (!guestTypeEls.isEmpty() && guestTypeEls.get(0).isDisplayed()) {
-            System.out.println("[BookingSteps] Guest form already visible, skipping room selection");
+        // Skip if guest form already visible
+        List<WebElement> gt = driver.findElements(By.id("guest_type"));
+        if (!gt.isEmpty() && gt.get(0).isDisplayed()) {
+            System.out.println("[BookingSteps] Guest form already visible");
             return;
         }
 
@@ -123,18 +157,18 @@ public class BookingSteps {
             Thread.sleep(1500);
         }
 
-        // Wait for modal body to populate OR room-btn to appear OR guest form
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(d ->
-            !d.findElements(By.xpath("//*[@id='room-types-info-modal']//button")).isEmpty()
-            || !d.findElements(By.xpath("//button[contains(@class,'room-btn')]")).isEmpty()
-            || (!d.findElements(By.id("guest_type")).isEmpty()
-                && d.findElement(By.id("guest_type")).isDisplayed())
-        );
+        // Wait for room-btn OR guest form
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(d -> {
+            if (!d.findElements(By.xpath("//button[contains(@class,'room-btn')]")).isEmpty()) return true;
+            if (!d.findElements(By.xpath("//*[@id='room-types-info-modal']//button")).isEmpty()) return true;
+            List<WebElement> g = d.findElements(By.id("guest_type"));
+            return !g.isEmpty() && g.get(0).isDisplayed();
+        });
         Thread.sleep(500);
 
-        // If guest form appeared after room_types click, done
-        guestTypeEls = driver.findElements(By.id("guest_type"));
-        if (!guestTypeEls.isEmpty() && guestTypeEls.get(0).isDisplayed()) {
+        // If guest form appeared, done
+        gt = driver.findElements(By.id("guest_type"));
+        if (!gt.isEmpty() && gt.get(0).isDisplayed()) {
             System.out.println("[BookingSteps] Guest form visible after room_types click");
             return;
         }
@@ -149,81 +183,67 @@ public class BookingSteps {
             List<WebElement> btns = driver.findElements(candidate);
             if (!btns.isEmpty()) {
                 jsClick(btns.get(0));
-                System.out.println("[BookingSteps] Clicked room button via: " + candidate);
+                System.out.println("[BookingSteps] Clicked room button: " + candidate);
                 Thread.sleep(1000);
                 break;
             }
         }
 
-        // Force close modal — data-bs-backdrop=static so ESC won't work
+        // Force close static modal
         js.executeScript(
             "var m=document.getElementById('room-types-info-modal');" +
-            "if(m){" +
-            "  try{bootstrap.Modal.getInstance(m).hide();}" +
-            "  catch(e){" +
-            "    m.classList.remove('show');" +
-            "    m.style.display='none';" +
-            "    m.setAttribute('aria-hidden','true');" +
-            "    m.removeAttribute('aria-modal');" +
-            "  }" +
-            "}" +
+            "if(m){try{bootstrap.Modal.getInstance(m).hide();}catch(e){m.classList.remove('show');m.style.display='none';m.setAttribute('aria-hidden','true');m.removeAttribute('aria-modal');}}" +
             "document.querySelectorAll('.modal-backdrop').forEach(b=>b.remove());" +
             "document.body.classList.remove('modal-open');" +
             "document.body.style.removeProperty('overflow');" +
-            "document.body.style.removeProperty('padding-right');"
-        );
+            "document.body.style.removeProperty('padding-right');");
         Thread.sleep(800);
         System.out.println("[BookingSteps] Modal closed");
 
-        // Wait for guest form to be ready
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("guest_type")));
     }
 
-    // ── Step 5: fill new guest details ─────────────────────────────────────────
-    private void fillNewGuestDetails(WebDriverWait wait) throws InterruptedException {
+    // ── Fill guest details ─────────────────────────────────────────────────────
+    private void fillGuestDetails(WebDriverWait wait, String firstName, String lastName,
+            String email, String mobile, String address, String zip,
+            String adults, String kids) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("guest_type")));
         Thread.sleep(300);
-
         selectByValue(By.id("guest_type"), "New Guest");
         Thread.sleep(300);
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("first_name")));
-
-        typeInto(By.id("first_name"),   "Jully");
-        typeInto(By.id("last_name"),    "Williams");
-        typeInto(By.id("email"),        "jully.williams@example.com");
-        typeInto(By.id("mobile"),       "5551234567");
-        typeInto(By.id("address"),      "123 Main Street");
-        typeInto(By.id("zip"),          "10001");
-        typeInto(By.id("guests_adult"), "1");
-        typeInto(By.id("guests_kids"),  "0");
-        System.out.println("[BookingSteps] Guest details filled");
+        typeInto(By.id("first_name"),   firstName);
+        typeInto(By.id("last_name"),    lastName);
+        typeInto(By.id("email"),        email);
+        typeInto(By.id("mobile"),       mobile);
+        typeInto(By.id("address"),      address);
+        typeInto(By.id("zip"),          zip);
+        typeInto(By.id("guests_adult"), adults);
+        typeInto(By.id("guests_kids"),  kids);
+        System.out.println("[BookingSteps] Guest details filled: " + firstName + " " + lastName);
     }
 
-    // ── Step 6: click Next button ──────────────────────────────────────────────
+    // ── Click Next ─────────────────────────────────────────────────────────────
     private void clickNextToPayment(WebDriverWait wait) throws InterruptedException {
-        // Exact xpath from live inspection
         By nextXpath = By.xpath("//*[@id='booking-form-div']/div[1]/div[1]/div[1]/div[4]/div[1]/button[1]");
         wait.until(ExpectedConditions.elementToBeClickable(nextXpath));
         jsClick(driver.findElement(nextXpath));
-        System.out.println("[BookingSteps] Clicked Next button");
+        System.out.println("[BookingSteps] Clicked Next");
         Thread.sleep(1500);
     }
 
-    // ── Step 7: wait for guarantee-method modal (contains payment form) ─────────
+    // ── Wait for payment section ───────────────────────────────────────────────
     private void waitForPaymentSection(WebDriverWait wait) {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//*[@id='guarantee-method']") ));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("guarantee-method")));
             System.out.println("[BookingSteps] Payment modal visible");
         } catch (Exception ignored) {
-            // fallback: wait for payment_type select
             try { wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("payment_type"))); }
             catch (Exception ignored2) {}
         }
     }
 
-    // ── Step 8: select Cash from payment_type inside guarantee-method modal ─────
+    // ── Select Cash ────────────────────────────────────────────────────────────
     private void selectCashPayment(WebDriverWait wait) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(By.id("payment_type")));
@@ -234,19 +254,17 @@ public class BookingSteps {
         }
     }
 
-    // ── Step 9: confirm booking via guarantee-method modal confirm button ────────
+    // ── Confirm booking ────────────────────────────────────────────────────────
     private void confirmBooking(WebDriverWait wait) throws InterruptedException {
-        // Exact xpath from live inspection: guarantee-method modal → div[3] → button[2]
         By confirmXpath = By.xpath("//*[@id='guarantee-method']/div[1]/div[1]/div[3]/button[2]");
         try {
             wait.until(ExpectedConditions.elementToBeClickable(confirmXpath));
             jsClick(driver.findElement(confirmXpath));
-            System.out.println("[BookingSteps] Booking confirmed via guarantee-method");
+            System.out.println("[BookingSteps] Booking confirmed");
             Thread.sleep(1000);
             return;
         } catch (Exception ignored) {}
 
-        // Fallback selectors
         for (By sel : List.of(
             By.cssSelector("#guarantee-method button.btn-primary.btn-book.btn-confirm"),
             By.cssSelector("button.btn-primary.btn-lg.btn-book.btn-confirm"),
@@ -267,7 +285,7 @@ public class BookingSteps {
         System.out.println("[BookingSteps] Confirm button not found");
     }
 
-    // ── Step 10: post-payment modal ─────────────────────────────────────────────
+    // ── Post-payment modal ─────────────────────────────────────────────────────
     private void completePostPayment(WebDriverWait wait) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#postPayment button.btn-primary")));
@@ -277,7 +295,7 @@ public class BookingSteps {
         } catch (Exception ignored) {}
     }
 
-    // ── Assertion ──────────────────────────────────────────────────────────────
+    // ── Assertions ─────────────────────────────────────────────────────────────
     @Then("the booking should be created successfully")
     public void theBookingShouldBeCreatedSuccessfully() {
         new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.or(
@@ -286,7 +304,35 @@ public class BookingSteps {
         ));
     }
 
+    @Then("the reservation booking should be created successfully")
+    public void theReservationBookingShouldBeCreatedSuccessfully() {
+        new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.or(
+            ExpectedConditions.urlContains("booking/"),
+            ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#postPayment"))
+        ));
+        System.out.println("[BookingSteps] Reservation booking created successfully");
+    }
+
     // ── Helpers ────────────────────────────────────────────────────────────────
+
+    // Only set date via JS if the field is currently empty — never overwrite pre-filled value
+    private void setDateIfEmpty(String fieldId, String value) {
+        try {
+            String current = (String) js.executeScript(
+                "return document.getElementById('" + fieldId + "').value;");
+            if (current == null || current.trim().isEmpty()) {
+                js.executeScript(
+                    "var e=document.getElementById('" + fieldId + "');" +
+                    "e.value=arguments[0];" +
+                    "e.dispatchEvent(new Event('input',{bubbles:true}));" +
+                    "e.dispatchEvent(new Event('change',{bubbles:true}));", value);
+                System.out.println("[BookingSteps] Set " + fieldId + " = " + value);
+            } else {
+                System.out.println("[BookingSteps] " + fieldId + " already has value: " + current + " (keeping)");
+            }
+        } catch (Exception ignored) {}
+    }
+
     private void jsClick(WebElement el) {
         js.executeScript("arguments[0].scrollIntoView({block:'center'}); arguments[0].click();", el);
     }
