@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="139.651" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Create Booking" name="Create a walk-in booking for Non Smoking Double Beds room type with cash payment" time="31.562">
+<testsuite name="Cucumber" time="554.1" tests="6" skipped="0" failures="0" errors="0">
+<testcase classname="Create Booking" name="Create a new walk-in booking for a new guest with cash payment" time="30.133">
+<system-out><![CDATA[
+Given I am logged in........................................................passed
+When I navigate to bookings page............................................passed
+And I create a new booking with guest details...............................passed
+Then the booking should be created successfully.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Create Booking" name="Create a reservation booking for 5 rooms and 6 nights with cash payment" time="106.107">
+<system-out><![CDATA[
+Given I am logged in........................................................passed
+When I navigate to bookings page............................................passed
+And I create a reservation booking for 5 rooms and 6 nights.................passed
+Then the reservation booking should be created successfully.................passed
+]]></system-out>
+</testcase>
+<testcase classname="Create Booking" name="Create a walk-in booking for Non Smoking Double Beds room type with cash payment" time="66.887">
 <system-out><![CDATA[
 Given I am logged in........................................................passed
 When I navigate to bookings page............................................passed
@@ -8,12 +24,28 @@ And I create a walk-in booking for NSDB room type...........................pass
 Then the booking should be created successfully.............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Create Booking" name="Create a reservation booking for Non Smoking Double Beds room type with cash payment" time="107.837">
+<testcase classname="Create Booking" name="Create a reservation booking for Non Smoking Double Beds room type with cash payment" time="108.055">
 <system-out><![CDATA[
 Given I am logged in........................................................passed
 When I navigate to bookings page............................................passed
 And I create a reservation booking for NSDB room type.......................passed
 Then the reservation booking should be created successfully.................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check In Guest" name="Check in a guest" time="238.948">
+<system-out><![CDATA[
+Given I am logged in........................................................passed
+When I navigate to arrivals page............................................passed
+And I select a booking and check in.........................................passed
+Then the guest should be checked in successfully............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login to HX PMS" name="Successful login with valid credentials - Example #1.1" time="3.722">
+<system-out><![CDATA[
+Given I am on the login page................................................passed
+When I enter username "webdev" and password "1234"..........................passed
+And I click the login button................................................passed
+Then I should be logged in successfully.....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

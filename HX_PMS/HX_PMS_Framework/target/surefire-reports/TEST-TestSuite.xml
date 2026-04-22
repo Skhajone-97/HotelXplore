@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="140.008" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="554.518" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="webdriver.chrome.driver" value="/Users/pa/.cache/selenium/chromedriver/mac-arm64/147.0.7727.57/chromedriver"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/surefire/surefirebooter-20260422163839117_3.jar /Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/surefire 2026-04-22T16-38-39_002-jvmRun1 surefire-20260422163839117_1tmp surefire_0-20260422163839117_2tmp"/>
+    <property name="sun.java.command" value="/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/surefire/surefirebooter-20260422165659485_3.jar /Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/surefire 2026-04-22T16-56-59_385-jvmRun1 surefire-20260422165659485_1tmp surefire_0-20260422165659485_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/test-classes:/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/classes:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-java/4.15.0/selenium-java-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-api/4.15.0/selenium-api-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.15.0/selenium-chrome-driver-4.15.0.jar:/Users/pa/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.15.0/selenium-chromium-driver-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-json/4.15.0/selenium-json-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.15.0/selenium-manager-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v117/4.15.0/selenium-devtools-v117-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v118/4.15.0/selenium-devtools-v118-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v119/4.15.0/selenium-devtools-v119-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.15.0/selenium-devtools-v85-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.15.0/selenium-edge-driver-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.15.0/selenium-firefox-driver-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-http/4.15.0/selenium-http-4.15.0.jar:/Users/pa/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.15.0/selenium-ie-driver-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.15.0/selenium-remote-driver-4.15.0.jar:/Users/pa/.m2/repository/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/Users/pa/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/pa/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/pa/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/pa/.m2/repository/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/Users/pa/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/Users/pa/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-api/1.28.0/opentelemetry-api-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-context/1.28.0/opentelemetry-context-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.28.0/opentelemetry-exporter-logging-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.28.0/opentelemetry-sdk-metrics-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-extension-incubator/1.28.0-alpha/opentelemetry-extension-incubator-1.28.0-alpha.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.28.0/opentelemetry-sdk-logs-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.28.0/opentelemetry-sdk-common-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.28.0/opentelemetry-sdk-extension-autoconfigure-spi-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.28.0/opentelemetry-sdk-extension-autoconfigure-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-api-events/1.28.0-alpha/opentelemetry-api-events-1.28.0-alpha.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.28.0/opentelemetry-sdk-trace-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.28.0/opentelemetry-sdk-1.28.0.jar:/Users/pa/.m2/repository/io/opentelemetry/opentelemetry-semconv/1.28.0-alpha/opentelemetry-semconv-1.28.0-alpha.jar:/Users/pa/.m2/repository/net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-os/4.15.0/selenium-os-4.15.0.jar:/Users/pa/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.15.0/selenium-safari-driver-4.15.0.jar:/Users/pa/.m2/repository/org/seleniumhq/selenium/selenium-support/4.15.0/selenium-support-4.15.0.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-java/7.14.0/cucumber-java-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-core/7.14.0/cucumber-core-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-gherkin/7.14.0/cucumber-gherkin-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.14.0/cucumber-gherkin-messages-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/Users/pa/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/Users/pa/.m2/repository/io/cucumber/tag-expressions/5.0.6/tag-expressions-5.0.6.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-expressions/16.1.2/cucumber-expressions-16.1.2.jar:/Users/pa/.m2/repository/io/cucumber/datatable/7.14.0/datatable-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-plugin/7.14.0/cucumber-plugin-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/docstring/7.14.0/docstring-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/Users/pa/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/Users/pa/.m2/repository/io/cucumber/ci-environment/9.2.0/ci-environment-9.2.0.jar:/Users/pa/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-junit/7.14.0/cucumber-junit-7.14.0.jar:/Users/pa/.m2/repository/io/cucumber/cucumber-testng/7.14.0/cucumber-testng-7.14.0.jar:/Users/pa/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/pa/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/pa/.m2/repository/org/testng/testng/7.9.0/testng-7.9.0.jar:/Users/pa/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/pa/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/pa/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/pa/.m2/repository/org/apache/poi/poi/5.2.4/poi-5.2.4.jar:/Users/pa/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/pa/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/pa/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/pa/.m2/repository/commons-io/commons-io/2.13.0/commons-io-2.13.0.jar:/Users/pa/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/Users/pa/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/Users/pa/.m2/repository/org/apache/poi/poi-ooxml/5.2.4/poi-ooxml-5.2.4.jar:/Users/pa/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.4/poi-ooxml-lite-5.2.4.jar:/Users/pa/.m2/repository/org/apache/xmlbeans/xmlbeans/5.1.1/xmlbeans-5.1.1.jar:/Users/pa/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/pa/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/Users/pa/.m2/repository/io/github/bonigarcia/webdrivermanager/5.5.3/webdrivermanager-5.5.3.jar:/Users/pa/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/pa/.m2/repository/com/github/docker-java/docker-java/3.3.3/docker-java-3.3.3.jar:/Users/pa/.m2/repository/com/github/docker-java/docker-java-core/3.3.3/docker-java-core-3.3.3.jar:/Users/pa/.m2/repository/com/github/docker-java/docker-java-api/3.3.3/docker-java-api-3.3.3.jar:/Users/pa/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.75/bcpkix-jdk18on-1.75.jar:/Users/pa/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.75/bcprov-jdk18on-1.75.jar:/Users/pa/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.75/bcutil-jdk18on-1.75.jar:/Users/pa/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/Users/pa/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.3.3/docker-java-transport-httpclient5-3.3.3.jar:/Users/pa/.m2/repository/com/github/docker-java/docker-java-transport/3.3.3/docker-java-transport-3.3.3.jar:/Users/pa/.m2/repository/net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar:/Users/pa/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/Users/pa/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/pa/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/Users/pa/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/Users/pa/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/Users/pa/.m2/repository/net/masterthought/cucumber-reporting/5.7.7/cucumber-reporting-5.7.7.jar:/Users/pa/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar:/Users/pa/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar:/Users/pa/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar:/Users/pa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar:/Users/pa/.m2/repository/org/apache/velocity/velocity-engine-core/2.3/velocity-engine-core-2.3.jar:/Users/pa/.m2/repository/joda-time/joda-time/2.12.5/joda-time-2.12.5.jar:/Users/pa/.m2/repository/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar:/Users/pa/.m2/repository/org/jsoup/jsoup/1.16.1/jsoup-1.16.1.jar:/Users/pa/.m2/repository/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20220608.1/owasp-java-html-sanitizer-20220608.1.jar:/Users/pa/.m2/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar:/Users/pa/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/pa/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/surefire/surefirebooter-20260422163839117_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework/target/surefire/surefirebooter-20260422165659485_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.13+11-LTS"/>
@@ -45,7 +45,6 @@
     <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
     <property name="java.io.tmpdir" value="/var/folders/bt/fnhvdc_n35x992g7db20yvc80000gn/T/"/>
     <property name="java.version" value="17.0.13"/>
-    <property name="cucumber.filter.tags" value="@walkin-nsdb or @reservation-nsdb"/>
     <property name="user.dir" value="/Users/pa/Downloads/HX_PMS_Full _Phase/HX_PMS/HX_PMS_Framework"/>
     <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
@@ -59,7 +58,75 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="runScenario[&quot;Create a walk-in booking for Non Smoking Double Beds room type with cash payment&quot;, &quot;Create Booking&quot;](1)" classname="com.hxpms.runners.TestNGRunner" time="31.597">
+  <testcase name="runScenario[&quot;Create a new walk-in booking for a new guest with cash payment&quot;, &quot;Create Booking&quot;](1)" classname="com.hxpms.runners.TestNGRunner" time="30.158">
+    <system-out><![CDATA[
+@walkin
+Scenario: Create a new walk-in booking for a new guest with cash payment # src/test/resources/features/Booking.feature:4
+[CommonSteps] waiting for dashboard, current URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+[CommonSteps] dashboard detected, URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+  Given I am logged in                                                   # com.hxpms.stepdefinitions.CommonSteps.iAmLoggedIn()
+  When I navigate to bookings page                                       # com.hxpms.stepdefinitions.BookingSteps.iNavigateToBookingsPage()
+[BookingSteps] Excel loaded: WalkIn_Guest -> {ROOMS=1, ZIP=10001, LAST NAME=Williams, BOOKING TYPE=Walk In, FIRST NAME=Jully, ADDRESS=123 Main Street, ADULTS=1, SCENARIO=Walk-In Booking, NIGHTS=1, EMAIL=jully.williams@example.com, KIDS=0, MOBILE=5551234567}
+[BookingSteps] checkin_date already filled: 04/22/2026
+[BookingSteps] checkout_date already filled: 04/23/2026
+[BookingSteps] Search form: type=Walk In rooms=1 nights=1
+[BookingSteps] Search clicked
+[BookingSteps] Search results ready
+[BookingSteps] Clicked room_types button
+[BookingSteps] Select2 #country-dropdown = 'United States' (value=019542f8-270a-a8b2-aff5-475e2036cf10)
+[BookingSteps] Select2 #state-dropdown = 'Alaska' (value=01954301-0d52-9ea8-8e64-0c82fa92d2a3)
+[BookingSteps] Select2 #city-dropdown = 'Akutan' (value=019542f2-1c4b-bb63-ee73-457a3dfeacdc)
+[BookingSteps] Guest filled: Jully Williams
+[BookingSteps] Clicked Next button
+[BookingSteps] Cash selected
+[BookingSteps] Booking confirmed
+  And I create a new booking with guest details                          # com.hxpms.stepdefinitions.BookingSteps.iCreateANewBookingWithGuestDetails()
+[BookingSteps] Booking created: https://demo.hotelxplore.com/frontdesk/booking/details/019db4f1-e3c9-236d-4ecd-9f7b6e1e3a5a
+  Then the booking should be created successfully                        # com.hxpms.stepdefinitions.BookingSteps.theBookingShouldBeCreatedSuccessfully()
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Apr 22, 2026 4:57:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 147
+Apr 22, 2026 4:57:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 147.0.7727.102. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Create a reservation booking for 5 rooms and 6 nights with cash payment&quot;, &quot;Create Booking&quot;](2)" classname="com.hxpms.runners.TestNGRunner" time="106.109">
+    <system-out><![CDATA[
+@reservation
+Scenario: Create a reservation booking for 5 rooms and 6 nights with cash payment # src/test/resources/features/Booking.feature:11
+[CommonSteps] waiting for dashboard, current URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+[CommonSteps] dashboard detected, URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+  Given I am logged in                                                            # com.hxpms.stepdefinitions.CommonSteps.iAmLoggedIn()
+  When I navigate to bookings page                                                # com.hxpms.stepdefinitions.BookingSteps.iNavigateToBookingsPage()
+[BookingSteps] Excel loaded: Reservation_Guest -> {ROOMS=3, ZIP=90210, LAST NAME=Disuza, BOOKING TYPE=Reservation, FIRST NAME=Kelvin, ADDRESS=456 Ocean Avenue, ADULTS=5, SCENARIO=Reservation Booking, NIGHTS=6, EMAIL=kelvin.disuza@example.com, KIDS=0, MOBILE=5559876543}
+[BookingSteps] checkin_date already filled: 04/22/2026
+[BookingSteps] checkout_date already filled: 04/23/2026
+[BookingSteps] Search form: type=Reservation rooms=3 nights=6
+[BookingSteps] Search clicked
+[BookingSteps] Search results ready
+[BookingSteps] Clicked room_types button
+[BookingSteps] Select2 #country-dropdown = 'United States' (value=019542f8-270a-a8b2-aff5-475e2036cf10)
+[BookingSteps] Select2 #state-dropdown = 'Alaska' (value=01954301-0d52-9ea8-8e64-0c82fa92d2a3)
+[BookingSteps] Select2 #city-dropdown = 'Akutan' (value=019542f2-1c4b-bb63-ee73-457a3dfeacdc)
+[BookingSteps] Guest filled: Kelvin Disuza
+[BookingSteps] Clicked Next button
+[BookingSteps] Cash selected
+[BookingSteps] Booking confirmed
+  And I create a reservation booking for 5 rooms and 6 nights                     # com.hxpms.stepdefinitions.BookingSteps.iCreateAReservationBookingFor5RoomsAnd6Nights()
+[BookingSteps] Reservation booking created: https://demo.hotelxplore.com/frontdesk/booking/todays/new-booking
+  Then the reservation booking should be created successfully                     # com.hxpms.stepdefinitions.BookingSteps.theReservationBookingShouldBeCreatedSuccessfully()
+]]></system-out>
+    <system-err><![CDATA[Apr 22, 2026 4:57:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 147
+Apr 22, 2026 4:57:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 147.0.7727.102. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Create a walk-in booking for Non Smoking Double Beds room type with cash payment&quot;, &quot;Create Booking&quot;](3)" classname="com.hxpms.runners.TestNGRunner" time="66.89">
     <system-out><![CDATA[
 @walkin-nsdb
 Scenario: Create a walk-in booking for Non Smoking Double Beds room type with cash payment # src/test/resources/features/Booking.feature:18
@@ -84,20 +151,16 @@ Scenario: Create a walk-in booking for Non Smoking Double Beds room type with ca
 [BookingSteps] Cash selected
 [BookingSteps] Booking confirmed
   And I create a walk-in booking for NSDB room type                                        # com.hxpms.stepdefinitions.BookingSteps.iCreateAWalkInBookingForNSDBRoomType()
-[BookingSteps] Booking created: https://demo.hotelxplore.com/frontdesk/booking/details/019db4e1-1e87-253b-c476-0f72bf1efecb
+[BookingSteps] Booking created: https://demo.hotelxplore.com/frontdesk/book-room?book-type=Walk%20In
   Then the booking should be created successfully                                          # com.hxpms.stepdefinitions.BookingSteps.theBookingShouldBeCreatedSuccessfully()
 ]]></system-out>
-    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Apr 22, 2026 4:38:41 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Apr 22, 2026 4:59:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 147
-Apr 22, 2026 4:38:41 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 22, 2026 4:59:16 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 147.0.7727.102. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario[&quot;Create a reservation booking for Non Smoking Double Beds room type with cash payment&quot;, &quot;Create Booking&quot;](2)" classname="com.hxpms.runners.TestNGRunner" time="107.839">
+  <testcase name="runScenario[&quot;Create a reservation booking for Non Smoking Double Beds room type with cash payment&quot;, &quot;Create Booking&quot;](4)" classname="com.hxpms.runners.TestNGRunner" time="108.058">
     <system-out><![CDATA[
 @reservation-nsdb
 Scenario: Create a reservation booking for Non Smoking Double Beds room type with cash payment # src/test/resources/features/Booking.feature:25
@@ -125,9 +188,129 @@ Scenario: Create a reservation booking for Non Smoking Double Beds room type wit
 [BookingSteps] Reservation booking created: https://demo.hotelxplore.com/frontdesk/booking/todays/new-booking
   Then the reservation booking should be created successfully                                  # com.hxpms.stepdefinitions.BookingSteps.theReservationBookingShouldBeCreatedSuccessfully()
 ]]></system-out>
-    <system-err><![CDATA[Apr 22, 2026 4:39:11 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Apr 22, 2026 5:00:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 147
-Apr 22, 2026 4:39:11 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 22, 2026 5:00:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 147.0.7727.102. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Check in a guest&quot;, &quot;Check In Guest&quot;](5)" classname="com.hxpms.runners.TestNGRunner" time="238.949">
+    <system-out><![CDATA[
+@checkin
+Scenario: Check in a guest                         # src/test/resources/features/CheckIn.feature:4
+[CommonSteps] waiting for dashboard, current URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+[CommonSteps] dashboard detected, URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+  Given I am logged in                             # com.hxpms.stepdefinitions.CommonSteps.iAmLoggedIn()
+  When I navigate to arrivals page                 # com.hxpms.stepdefinitions.CheckInSteps.iNavigateToArrivalsPage()
+╔══════════════════════════════════════════╗
+║  Arrivals page loaded                    ║
+║  Total guests present: 6                 ║
+╚══════════════════════════════════════════╝
+
+[CheckInSteps] ── Processing guest 1 of 6 ──
+[CheckInSteps] Check-in buttons remaining: 6
+[CheckInSteps] Clicked Check In button for guest 1
+[CheckInSteps] Clicked modal Check In button (guest 1)
+[CheckInSteps] Clicked next link (guest 1)
+[CheckInSteps] saveReceipt failed: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='content'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53126}, goog:processID: 14894, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53126/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7853fef0b41f21d4f6da0f90f6bab333
+[CheckInSteps] Returned to arrivals page
+
+[CheckInSteps] ── Processing guest 2 of 6 ──
+[CheckInSteps] Check-in buttons remaining: 5
+[CheckInSteps] Clicked Check In button for guest 2
+[CheckInSteps] Clicked modal Check In button (guest 2)
+[CheckInSteps] Clicked next link (guest 2)
+[CheckInSteps] saveReceipt failed: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='content'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53126}, goog:processID: 14894, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53126/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7853fef0b41f21d4f6da0f90f6bab333
+[CheckInSteps] Returned to arrivals page
+
+[CheckInSteps] ── Processing guest 3 of 6 ──
+[CheckInSteps] Check-in buttons remaining: 4
+[CheckInSteps] Clicked Check In button for guest 3
+[CheckInSteps] Clicked modal Check In button (guest 3)
+[CheckInSteps] Clicked next link (guest 3)
+[CheckInSteps] saveReceipt failed: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='content'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53126}, goog:processID: 14894, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53126/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7853fef0b41f21d4f6da0f90f6bab333
+[CheckInSteps] Returned to arrivals page
+
+[CheckInSteps] ── Processing guest 4 of 6 ──
+[CheckInSteps] Check-in buttons remaining: 3
+[CheckInSteps] Clicked Check In button for guest 4
+[CheckInSteps] Clicked modal Check In button (guest 4)
+[CheckInSteps] Clicked next link (guest 4)
+[CheckInSteps] saveReceipt failed: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='content'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53126}, goog:processID: 14894, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53126/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7853fef0b41f21d4f6da0f90f6bab333
+[CheckInSteps] Returned to arrivals page
+
+[CheckInSteps] ── Processing guest 5 of 6 ──
+[CheckInSteps] Check-in buttons remaining: 2
+[CheckInSteps] Clicked Check In button for guest 5
+[CheckInSteps] Clicked modal Check In button (guest 5)
+[CheckInSteps] Clicked next link (guest 5)
+[CheckInSteps] saveReceipt failed: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='content'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53126}, goog:processID: 14894, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53126/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7853fef0b41f21d4f6da0f90f6bab333
+[CheckInSteps] Returned to arrivals page
+
+[CheckInSteps] ── Processing guest 6 of 6 ──
+[CheckInSteps] Check-in buttons remaining: 1
+[CheckInSteps] Clicked Check In button for guest 6
+[CheckInSteps] Clicked modal Check In button (guest 6)
+[CheckInSteps] Clicked next link (guest 6)
+[CheckInSteps] saveReceipt failed: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='content'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.6', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: /var/folders/bt/fnhvdc_n35x...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53126}, goog:processID: 14894, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53126/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7853fef0b41f21d4f6da0f90f6bab333
+[CheckInSteps] Returned to arrivals page
+
+[CheckInSteps] ✓ All 6 guests checked in
+  And I select a booking and check in              # com.hxpms.stepdefinitions.CheckInSteps.iSelectABookingAndCheckIn()
+[CheckInSteps] Check-in scenario completed successfully
+  Then the guest should be checked in successfully # com.hxpms.stepdefinitions.CheckInSteps.theGuestShouldBeCheckedInSuccessfully()
+]]></system-out>
+    <system-err><![CDATA[Apr 22, 2026 5:02:11 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 147
+Apr 22, 2026 5:02:11 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 147.0.7727.102. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Successful login with valid credentials&quot;, &quot;Login to HX PMS&quot;](6)" classname="com.hxpms.runners.TestNGRunner" time="3.725">
+    <system-out><![CDATA[
+Scenario Outline: Successful login with valid credentials # src/test/resources/features/Login.feature:11
+  Given I am on the login page                            # com.hxpms.stepdefinitions.LoginSteps.iAmOnTheLoginPage()
+  When I enter username "webdev" and password "1234"      # com.hxpms.stepdefinitions.LoginSteps.iEnterUsernameAndPassword(java.lang.String,java.lang.String)
+[LoginSteps] waiting for dashboard, current URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+[LoginSteps] dashboard detected, URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+  And I click the login button                            # com.hxpms.stepdefinitions.LoginSteps.iClickTheLoginButton()
+[LoginSteps] waiting for dashboard, current URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+[LoginSteps] dashboard detected, URL=https://demo.hotelxplore.com/frontdesk/dashboard, title=Hotel Xplore - Dashboard
+  Then I should be logged in successfully                 # com.hxpms.stepdefinitions.LoginSteps.iShouldBeLoggedInSuccessfully()
+]]></system-out>
+    <system-err><![CDATA[Apr 22, 2026 5:06:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 147
+Apr 22, 2026 5:06:10 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 147.0.7727.102. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
