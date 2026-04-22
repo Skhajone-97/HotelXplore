@@ -2,6 +2,7 @@ package com.hxpms.utils;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellType;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -35,7 +36,16 @@ public class ExcelReader {
                 Cell headerCell = headerRow.getCell(j);
                 Cell dataCell = row.getCell(j);
                 String header = headerCell != null ? headerCell.getStringCellValue() : "";
-                String value = dataCell != null ? dataCell.toString() : "";
+                String value = "";
+                if (dataCell != null) {
+                    if (dataCell.getCellType() == CellType.NUMERIC) {
+                        // Return as integer string if it's a whole number (e.g. 5.0 → "5")
+                        double num = dataCell.getNumericCellValue();
+                        value = (num == Math.floor(num)) ? String.valueOf((long) num) : String.valueOf(num);
+                    } else {
+                        value = dataCell.toString();
+                    }
+                }
                 rowData.put(header, value);
             }
             data.add(rowData);

@@ -1,5 +1,6 @@
 Feature: Check In Guest
 
+  @checkin
   Scenario: Check in a guest
     Given I am logged in
     When I navigate to arrivals page
