@@ -242,10 +242,22 @@ public class BookingSteps {
         wait.until(ExpectedConditions.elementToBeClickable(nsdbRoomBtn));
         jsClick(driver.findElement(nsdbRoomBtn));
         System.out.println("[BookingSteps] Clicked NSDB SELECT button");
-        Thread.sleep(1500);
+        Thread.sleep(2000);
 
+        // Close the static modal
         closeRoomModal();
+
+        // Wait for modal to fully disappear before interacting with guest form
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+            ExpectedConditions.invisibilityOfElementLocated(
+                By.cssSelector("#room-types-info-modal.show")));
+        Thread.sleep(500);
+
+        // Wait for guest_type to be visible AND clickable
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("guest_type")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("guest_type")));
+        Thread.sleep(500);
+        System.out.println("[BookingSteps] NSDB room selected, guest form ready");
     }
 
     // ── Close static modal ─────────────────────────────────────────────────────
@@ -265,11 +277,18 @@ public class BookingSteps {
     private void fillGuestDetails(WebDriverWait wait, String firstName, String lastName,
             String email, String mobile, String address, String zip,
             String adults, String kids) throws InterruptedException {
+        // Wait for guest_type to be visible AND clickable
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("guest_type")));
-        Thread.sleep(300);
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("guest_type")));
+        Thread.sleep(500);
+
         selectByValue(By.id("guest_type"), "New Guest");
-        Thread.sleep(300);
+        Thread.sleep(500);
+
+        // Wait for first_name to be visible AND clickable (ensures form is fully loaded)
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("first_name")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("first_name")));
+        Thread.sleep(300);
 
         typeInto(By.id("first_name"),   firstName);
         typeInto(By.id("last_name"),    lastName);
@@ -279,18 +298,19 @@ public class BookingSteps {
         typeInto(By.id("zip"),          zip);
         typeInto(By.id("guests_adult"), adults);
         typeInto(By.id("guests_kids"),  kids);
+        Thread.sleep(500);
 
         // Country — Select2 dropdown, select United States
         selectSelect2(wait, "country-dropdown", "United States");
-        Thread.sleep(1000);
+        Thread.sleep(1200);
 
         // State — Select2 dropdown, loaded after country selection
         selectSelect2(wait, "state-dropdown", "Alaska");
-        Thread.sleep(1000);
+        Thread.sleep(1200);
 
         // City — Select2 dropdown, loaded after state selection
         selectSelect2(wait, "city-dropdown", "Akutan");
-        Thread.sleep(500);
+        Thread.sleep(800);
 
         System.out.println("[BookingSteps] Guest filled: " + firstName + " " + lastName);
     }
